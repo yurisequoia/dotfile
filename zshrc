@@ -1,7 +1,7 @@
 export GPG_TTY=$(tty)
 alias proxy="export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153"
 export PATH="/Users/yuri/Applications/azulzulu/bin:$PATH"
-path+=('/Users/yuri/Applications/waifu2x')
+#path+=('/Users/yuri/Applications/waifu2x')
 export NVM_LAZY_LOAD=true
 export ZSH_PYENV_LAZY_VIRTUALENV=true
 DEFAULT_USER=$USER
@@ -24,15 +24,14 @@ plugins=(
   cp
   command-not-found
   safe-paste
-  zsh-completions
   z
   macos
   zsh-nvm
   #zsh-pyenv
   pyenv-lazy
   autoupdate
-  docker
-  docker-compose
+  #docker
+  #docker-compose
 )
 
 fpath+=/opt/homebrew/share/zsh/site-functions
