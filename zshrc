@@ -1,6 +1,7 @@
 export GPG_TTY=$(tty)
 alias proxy="export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153"
-export PATH="/Users/yuri/Applications/azulzulu/bin:$PATH"
+# export PATH="/Users/yuri/Applications/azulzulu/bin:$PATH"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 #path+=('/Users/yuri/Applications/waifu2x')
 export NVM_LAZY_LOAD=true
 export ZSH_PYENV_LAZY_VIRTUALENV=true
@@ -13,8 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
 
 # Uncomment one of the following lines to change the auto-update behavior
-zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 plugins=(
@@ -26,10 +27,9 @@ plugins=(
   safe-paste
   z
   macos
-  zsh-nvm
-  #zsh-pyenv
+  # zsh-nvm
+  # zsh-pyenv
   pyenv-lazy
-  autoupdate
   #docker
   #docker-compose
 )
