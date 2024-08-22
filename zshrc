@@ -33,8 +33,8 @@ zstyle ':z4h:direnv:success' notify 'yes'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # SSH when connecting to these hosts.
-zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
-zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+zstyle ':z4h:ssh:10.0.0.10'   enable 'yes'
+# zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
 # The default value if none of the overrides above match the hostname.
 zstyle ':z4h:ssh:*'                   enable 'no'
 
@@ -49,6 +49,7 @@ zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 # example. If you don't plan to use Oh My Zsh, delete this line.
 z4h install ohmyzsh/ohmyzsh || return
 z4h install DarrinTisdale/zsh-aliases-ls
+z4h install fdellwing/zsh-bat
 
 # Install or update core components (fzf, zsh-autosuggestions, etc.) and
 # initialize Zsh. After this point console I/O is unavailable until Zsh
@@ -61,7 +62,8 @@ path=(/opt/homebrew/opt/curl/bin $path)
 
 # Export environment variables.
 export GPG_TTY=$TTY
-alias proxy="export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153"
+alias inproxy="export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153"
+alias ouproxy="export https_proxy=http://10.0.0.251:6152;export http_proxy=http://10.0.0.251:6152;export all_proxy=socks5://10.0.0.251:6153"
 DEFAULT_USER=$USER
 
 # Source additional local files if they exist.
@@ -75,9 +77,9 @@ z4h source ~/.env.zsh
 z4h load ohmyzsh/ohmyzsh/plugins/pyenv
 z4h load ohmyzsh/ohmyzsh/plugins/git
 z4h load ohmyzsh/ohmyzsh/plugins/cp
-z4h load ohmyzsh/ohmyzsh/plugins/brew
 z4h load ohmyzsh/ohmyzsh/plugins/safe-paste
 z4h load DarrinTisdale/zsh-aliases-ls
+z4h load fdellwing/zsh-bat
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
