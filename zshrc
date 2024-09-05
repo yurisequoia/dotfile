@@ -58,7 +58,7 @@ z4h install fdellwing/zsh-bat
 z4h init || return
 
 # Extend PATH.
-path=(/opt/homebrew/opt/curl/bin $path)
+path=(/opt/homebrew/opt/curl/bin /opt/homebrew/opt/gnu-tar/libexec/gnubin $path)
 
 # Export environment variables.
 export GPG_TTY=$TTY
