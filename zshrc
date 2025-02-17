@@ -13,9 +13,9 @@ zstyle ':z4h:' auto-update-days '28'
 # Keyboard type: 'mac' or 'pc'.
 zstyle ':z4h:bindkey' keyboard  'mac'
 
-# tmux settings
-# zstyle ':z4h:' start-tmux       no
-zstyle ':z4h:' start-tmux       system
+# Start tmux if not already in tmux.
+zstyle ':z4h:' start-tmux system
+# zstyle ':z4h:' start-tmux command tmux -u new -A -D -t z4h
 zstyle ':z4h:' term-vresize top
 zstyle ':z4h:' propagate-cwd yes
 alias nano='nano --mouse'
@@ -39,8 +39,8 @@ zstyle ':z4h:direnv:success' notify 'yes'
 
 # Enable ('yes') or disable ('no') automatic teleportation of z4h over
 # SSH when connecting to these hosts.
-# zstyle ':z4h:ssh:10.0.0.10'   enable 'yes'
-# zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
 # The default value if none of the overrides above match the hostname.
 zstyle ':z4h:ssh:*'                   enable 'no'
 
@@ -69,7 +69,6 @@ path=(/opt/homebrew/opt/curl/bin /opt/homebrew/opt/gnu-tar/libexec/gnubin $path)
 # Export environment variables.
 export GPG_TTY=$TTY
 alias inproxy="export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153"
-alias ouproxy="export https_proxy=http://10.0.0.251:6152;export http_proxy=http://10.0.0.251:6152;export all_proxy=socks5://10.0.0.251:6153"
 DEFAULT_USER=$USER
 ZSH_PYENV_QUIET=true
 
