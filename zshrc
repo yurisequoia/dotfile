@@ -13,8 +13,14 @@ zstyle ':z4h:' auto-update-days '28'
 # Keyboard type: 'mac' or 'pc'.
 zstyle ':z4h:bindkey' keyboard  'mac'
 
-# Don't start tmux.
-zstyle ':z4h:' start-tmux       no
+# tmux settings
+# zstyle ':z4h:' start-tmux       no
+zstyle ':z4h:' start-tmux       system
+zstyle ':z4h:' term-vresize top
+zstyle ':z4h:' propagate-cwd yes
+alias nano='nano --mouse'
+zstyle ':z4h:' prompt-at-bottom 'yes'
+alias clear=z4h-clear-screen-soft-bottom
 
 # Mark up shell's output with semantic information.
 zstyle ':z4h:' term-shell-integration 'yes'
